@@ -28,6 +28,11 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
+    "extra": {
+      "customFont": {
+        "file": "./assets/fonts/Raleway/*.ttf"
+      }
+    },
     "experiments":{
       "typedRoutes": true
     },
