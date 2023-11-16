@@ -8,8 +8,8 @@ export default function Login(){
 
             <Image style={{width:200, height:300}} source={require('../../public/appoioLogo.png')}/>
 
-            <TextInput placeholder="E-mail" placeholderTextColor={'gray'} style={styles.TextInput} />
-            <TextInput placeholder="Senha" placeholderTextColor={'gray'} style={styles.TextInput} />
+            <TextInput placeholder="E-mail" keyboardType="email-address" placeholderTextColor={'gray'} style={styles.TextInput} />
+            <TextInput placeholder="Senha"secureTextEntry={true} placeholderTextColor={'gray'} style={styles.TextInput} />
 
             <Pressable style={styles.btn} onPress={()=> router.push('/(tabs)/home')} >
                 <Text style={{color:"#FAF9F6", fontWeight:'bold', fontSize:20}}>Entrar</Text>
