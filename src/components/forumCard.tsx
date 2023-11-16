@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React, { useState } from 'react'
 
-interface CardProps{
+interface ForumCardProps{
   title?: string;
-  data?: string;
-  concluido?:string;
+  createdBy?: string;
+  data?:string;
   onPress?: () => void;
 
 }
 
-export default function Card({title, data, concluido, onPress}: CardProps) {
+export default function ForumCard({title, createdBy, data, onPress}: ForumCardProps) {
 
   const [hover, setHover] = useState(false);
 
@@ -26,12 +26,12 @@ export default function Card({title, data, concluido, onPress}: CardProps) {
             <Text style={styles.h1}>{title}</Text>
         </View>
         <View style={styles.content}>
-            <Text style={styles.h2}>Último acesso:</Text>
-            <Text style={styles.h3}>{data}</Text>
+            <Text style={styles.h2}>Criado por:</Text>
+            <Text style={styles.h3}>{createdBy}</Text>
         </View>
         <View style={styles.content}>
-            <Text style={styles.h2}>Concluído:</Text>
-            <Text style={styles.h3}>{concluido}%</Text>
+            <Text style={styles.h2}>Data:</Text>
+            <Text style={styles.h3}>{data}</Text>
         </View>
         <Pressable style={styles.btn} onPress={onPress} >
           <Text style={styles.btn_content}>Ir</Text>

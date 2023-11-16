@@ -1,6 +1,7 @@
-import { Tabs } from "expo-router";
+import { Tabs, router } from "expo-router";
 import {MaterialIcons, MaterialCommunityIcons, SimpleLineIcons} from "@expo/vector-icons";
 import { useFonts } from "expo-font";
+import { Pressable } from "react-native";
 
 export default function TabRoutesLayout(){
 
@@ -16,11 +17,21 @@ export default function TabRoutesLayout(){
             <Tabs.Screen
                 name='quiz'
                 options={{
-                    headerTitle:"QUIZ",
+                    headerTitle:"Quiz",
+                    headerLeft:({}) => 
+                    <Pressable onPress={()=>router.replace('/home')}>
+                        <MaterialIcons name='arrow-back' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerLeftContainerStyle:{marginLeft:45, justifyContent:'center', alignContent:'center'},
                     headerTitleStyle:{
                         fontSize: 25,
                         fontFamily: 'RalewayBold',                        
-                    },                    
+                    },   
+                    headerRight:({}) => 
+                    <Pressable onPress={()=>router.replace('/')}>
+                        <MaterialIcons name='logout' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerRightContainerStyle:{marginRight:45, justifyContent:'center', alignContent:'center'},                 
                     tabBarLabel: "Quiz",
                     tabBarLabelPosition: 'below-icon',
                     tabBarLabelStyle:{
@@ -31,16 +42,27 @@ export default function TabRoutesLayout(){
                     tabBarActiveBackgroundColor: "#CCFF33",
                     tabBarActiveTintColor: "#31AFB4",
                     tabBarIcon: ({size, color}) => <MaterialCommunityIcons name='head-question-outline' size={size} color={color}/>
+                
                 }}
             />
             <Tabs.Screen
                 name='forum'
                 options={{
-                    headerTitle:'FORUM',
+                    headerTitle:'Forum',
+                    headerLeft:({}) => 
+                    <Pressable onPress={()=>router.replace('/home')}>
+                        <MaterialIcons name='arrow-back' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerLeftContainerStyle:{marginLeft:45, justifyContent:'center', alignContent:'center'},
                     headerTitleStyle:{
                         fontSize: 25,
                         fontFamily: 'RalewayBold',
                     },
+                    headerRight:({}) => 
+                    <Pressable onPress={()=>router.replace('/')}>
+                        <MaterialIcons name='logout' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerRightContainerStyle:{marginRight:45, justifyContent:'center', alignContent:'center'},
                     tabBarLabel: "Forum",
                     tabBarLabelPosition: 'below-icon',
                     tabBarLabelStyle:{
@@ -56,8 +78,17 @@ export default function TabRoutesLayout(){
             <Tabs.Screen
                 name='home'
                 options={{
-                    headerShown:false,
-                    headerTitle:'HOME',
+                    headerTitle:'Appoio',
+                    headerLeft:({}) => 
+                    <Pressable onPress={()=> router.back()}>
+                        <MaterialIcons name='menu' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerLeftContainerStyle:{marginLeft:45, justifyContent:'center', alignContent:'center'},
+                    headerRight:({}) => 
+                    <Pressable onPress={()=>router.replace('/')}>
+                        <MaterialIcons name='logout' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerRightContainerStyle:{marginRight:45, justifyContent:'center', alignContent:'center'},
                     headerTitleStyle:{
                         fontSize: 25,
                         fontFamily: 'RalewayBold'
@@ -77,11 +108,21 @@ export default function TabRoutesLayout(){
             <Tabs.Screen
                 name='trilhas'
                 options={{
-                    headerTitle:'TRILHAS',
+                    headerTitle:'Trilhas',
+                    headerLeft:({}) => 
+                    <Pressable onPress={()=> router.replace('/home')}>
+                        <MaterialIcons name='arrow-back' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerLeftContainerStyle:{marginLeft:45, justifyContent:'center', alignContent:'center'},
                     headerTitleStyle:{
                         fontSize: 25,
                         fontFamily: 'RalewayBold',
                     },
+                    headerRight:({}) => 
+                    <Pressable onPress={()=>router.replace('/')}>
+                        <MaterialIcons name='logout' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerRightContainerStyle:{marginRight:45, justifyContent:'center', alignContent:'center'},
                     tabBarLabel: "Trilhas",
                     tabBarLabelPosition: 'below-icon',
                     tabBarLabelStyle:{
@@ -97,11 +138,21 @@ export default function TabRoutesLayout(){
                 <Tabs.Screen
                 name='profile'
                 options={{
-                    headerTitle:'PERFIL',
+                    headerTitle:'Perfil',
+                    headerLeft:({}) => 
+                    <Pressable onPress={()=> router.replace('/home')}>
+                        <MaterialIcons name='arrow-back' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerLeftContainerStyle:{marginLeft:45, justifyContent:'center', alignContent:'center'},
                     headerTitleStyle:{
                         fontSize: 25,
                         fontFamily: 'RalewayBold',
                     },
+                    headerRight:({}) => 
+                    <Pressable onPress={()=>router.replace('/')}>
+                        <MaterialIcons name='logout' size={25} color={'#31AFB4'}/>
+                    </Pressable>,
+                    headerRightContainerStyle:{marginRight:45, justifyContent:'center', alignContent:'center'},
                     tabBarLabel: "Perfil",
                     tabBarLabelPosition: 'below-icon',
                     tabBarLabelStyle:{

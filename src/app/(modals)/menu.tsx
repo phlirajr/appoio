@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Quiz(){
+export default function Modal(){
     return (
         <View style={styles.container}>
             <Text>
-                Quiz
+                Modal
             </Text>
         </View>
     )
@@ -13,9 +13,15 @@ export default function Quiz(){
 const styles =  StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#FAF9F6',
         justifyContent: 'center',
         alignItems: 'center'
     },
+    text:{
+        fontWeight:'800',
+        color: 'white',
+        fontSize: 10
+    }
 
 
 
